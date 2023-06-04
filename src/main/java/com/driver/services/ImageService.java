@@ -40,9 +40,9 @@ public class ImageService {
 
         Image image = optionalImage.get();
 
-        String dimension = image.getDescription();
+        String dimension = image.getDimensions();
 
-        //change the screen dimension to the integers value
+        // change the screen dimension to the Integers value
         String str[] = screenDimensions.split("X");
 
         int heightScreen = Integer.valueOf(str[0]);
