@@ -1,6 +1,7 @@
 package com.driver.models;
 
 import javax.persistence.*;
+import java.util.*;
 
 
 @Entity
@@ -21,6 +22,10 @@ public class User{
 
     @Column(name = "last_name")
     private String lastName = "test";
+
+    //parent - child relation ship
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    List<Blog> blogList = new ArrayList<>();
 
     //Constructors
     public User() {
@@ -88,10 +93,4 @@ public class User{
     public void setBlogList(List<Blog> blogList) {
         this.blogList = blogList;
     }
-
-    //parent - child relation ship
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    List<Blog> blogList = new ArrayList<>();
-
-
 }
